@@ -7,7 +7,7 @@
 | --- | --- | --- |
 | 2026-11-15 23:33（北京时间） | 4 个 mod · 1 个游戏 | ✅ 活跃 1 · 🟡 低频 2 · ⏳ 停滞 1 |
 
-表格按「多久没更新」从久到近排序，最久没动的永远排在最前面。
+主表格按「最后更新」从新到旧排列；久未更新的不在这张表里比早晚，看上面「需要关注」区块。
 
 ## 🔔 需要关注
 
@@ -23,10 +23,10 @@
 
 | Mod | 类型 | 上游 | 最后更新 | 未更新 | 状态 | 最新版 | 说明 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| [STS2 AI Teammate](https://github.com/yehuoshun/STS2-AiTeammate) | mod | yehuoshun/STS2-AiTeammate | 2026-07-18 | 120 天 | ⏳ 停滞 | — | AI 队友 mod：本地伪联机里自动战斗/选牌/用药水/逛商店（fork 上游后适配当前版本） |
-| [SpireTheRpg](https://github.com/yehuoshun/SpireTheRpg) | mod | yehuoshun/SpireTheRpg | 2026-10-02 | 44 天 | 🟡 低频 | — | 尖塔 RPG 化改造：装备/融合/强化/锻造/卷轴/掉落系统（反编译源码整理，暂无 README） |
-| [sts2-mod-examples](https://github.com/yehuoshun/sts2-mod-examples) | 示例 | yehuoshun/sts2-mod-examples | 2026-10-14 | 32 天 | 🟡 低频 | — | 纯原生 mod 示例仓库：卡牌/能力/遗物/药水/附魔/事件的可编译样例 |
 | [ShunMod](https://github.com/yehuoshun/STS2-ShunMod) | mod | yehuoshun/STS2-ShunMod | 2026-11-12 | 今天 | ✅ 活跃 | 0.113 | 自研主线 mod：舜角色的卡牌/遗物/事件 + 共享核心框架 ShunMod_Core |
+| [sts2-mod-examples](https://github.com/yehuoshun/sts2-mod-examples) | 示例 | yehuoshun/sts2-mod-examples | 2026-10-14 | 32 天 | 🟡 低频 | — | 纯原生 mod 示例仓库：卡牌/能力/遗物/药水/附魔/事件的可编译样例 |
+| [SpireTheRpg](https://github.com/yehuoshun/SpireTheRpg) | mod | yehuoshun/SpireTheRpg | 2026-10-02 | 44 天 | 🟡 低频 | — | 尖塔 RPG 化改造：装备/融合/强化/锻造/卷轴/掉落系统（反编译源码整理，暂无 README） |
+| [STS2 AI Teammate](https://github.com/yehuoshun/STS2-AiTeammate) | mod | yehuoshun/STS2-AiTeammate | 2026-07-18 | 120 天 | ⏳ 停滞 | — | AI 队友 mod：本地伪联机里自动战斗/选牌/用药水/逛商店（fork 上游后适配当前版本） |
 
 ## ➕ 怎么登记新 mod
 

@@ -7,7 +7,7 @@
 | --- | --- | --- |
 | {{DATA_STAMP}} | {{MOD_COUNT}} 个 mod · {{GAME_COUNT}} 个游戏 | {{STATS_LINE}} |
 
-表格按「多久没更新」从久到近排序，最久没动的永远排在最前面。
+{{SORT_NOTE}}
 
 ## 🔔 需要关注
 

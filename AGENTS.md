@@ -10,6 +10,7 @@
 | --- | --- |
 | 登记 / 删除一个 mod | `mods/<游戏>.yaml`，然后 `python scripts/modindex.py all` |
 | 改阈值（多久算停滞） | `config.yaml` 的 `freshness` |
+| 改排序（新→旧 / 旧→新） | `config.yaml` 的 `table_order`（顶上的「需要关注」区块永远按最久没动排，不受影响） |
 | 改 README 文案、加说明段 | `templates/README.md.tpl`，然后 `python scripts/modindex.py render` |
 | 加新游戏 | `config.yaml` 的 `games` 加一项 + 新建 `mods/<key>.yaml` |
 | 改核查逻辑 | `scripts/modindex.py`，同时补 `tests/test_status.py` |

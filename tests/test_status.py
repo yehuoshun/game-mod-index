@@ -113,6 +113,48 @@ class BomTests(unittest.TestCase):
         self.assertEqual(__import__("json").loads(modindex.read_text(self.file)), {"a": 1})
 
 
+class SortTests(unittest.TestCase):
+    """主表格排序由 config.yaml 的 table_order 控制，两种顺序都要能排对。"""
+
+    NAMES = ("Fresh", "Mid", "Old", "Unknown")
+
+    def _rows(self):
+        rows = []
+        for name, days in (("Fresh", 1), ("Mid", 40), ("Old", 200), ("Unknown", None)):
+            entry = {"id": name.lower(), "name": name, "_game": "sts2", "kind": "mod"}
+            meta = {"html_url": f"https://github.com/x/{name}", "pushed_at": "2026-01-01T00:00:00Z"}
+            rows.append(
+                modindex.Row(
+                    entry=entry,
+                    meta=meta,
+                    status="unknown" if days is None else "active",
+                    days=days,
+                    attention=False,
+                )
+            )
+        return rows
+
+    def _order(self, mode):
+        cfg = dict(modindex.load_config())
+        cfg["table_order"] = mode
+        text = modindex.render_tables(self._rows(), cfg)
+        return sorted(self.NAMES, key=lambda n: text.index(f"[{n}]"))
+
+    def test_newest_first(self):
+        self.assertEqual(self._order("newest_first"), ["Fresh", "Mid", "Old", "Unknown"])
+
+    def test_oldest_first(self):
+        self.assertEqual(self._order("oldest_first"), ["Old", "Mid", "Fresh", "Unknown"])
+
+    def test_unknown_always_last(self):
+        for mode in ("newest_first", "oldest_first"):
+            with self.subTest(mode=mode):
+                self.assertEqual(self._order(mode)[-1], "Unknown")
+
+    def test_configured_order_is_valid(self):
+        self.assertIn(modindex.load_config()["table_order"], modindex.TABLE_ORDERS)
+
+
 class ConfigTests(unittest.TestCase):
     def test_thresholds_are_90_180(self):
         cfg = modindex.load_config()

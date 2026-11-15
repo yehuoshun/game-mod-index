@@ -8,6 +8,11 @@ freshness:
 utc_offset_hours: 8
 timezone_label: 北京时间
 
+# 主表格排序（顶上的「需要关注」区块永远按最久没动排，不受这里影响）
+#   newest_first  新 → 旧（默认，像普通项目列表）
+#   oldest_first  旧 → 新（久未更新的顶到最前）
+table_order: newest_first
+
 # 游戏清单：key 必须与 mods/<key>.yaml 同名，顺序就是 README 的分组顺序
 games:
   sts2:

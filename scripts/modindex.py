@@ -45,6 +45,11 @@ KIND_LABELS = {
     "tool": "工具",
 }
 LIFECYCLES = ("active", "paused", "archived")
+TABLE_ORDERS = ("newest_first", "oldest_first")
+SORT_NOTES = {
+    "newest_first": "主表格按「最后更新」从新到旧排列；久未更新的不在这张表里比早晚，看上面「需要关注」区块。",
+    "oldest_first": "主表格按「多久没更新」从久到近排列，最久没动的永远排在最前面。",
+}
 
 STATUS_META = {
     "active": ("✅", "活跃"),
@@ -145,6 +150,7 @@ def load_config() -> dict:
         },
         "utc_offset_hours": float(raw.get("utc_offset_hours", 8)),
         "timezone_label": raw.get("timezone_label", "UTC+8"),
+        "table_order": str(raw.get("table_order") or "newest_first").strip().lower(),
         "games": raw.get("games") or {},
     }
     return cfg
@@ -374,6 +380,15 @@ def render_attention(rows: list[Row], cfg) -> str:
     return "\n".join(lines)
 
 
+def table_sort_key(row: Row, cfg):
+    """主表格排序：newest_first 新→旧（默认），oldest_first 旧→新；拉不到数据的永远垫底。"""
+    days = row.days
+    if days is None:
+        return (1, 0, row.name.lower())
+    sign = -1 if cfg.get("table_order", "newest_first") == "oldest_first" else 1
+    return (0, sign * days, row.name.lower())
+
+
 def render_tables(rows: list[Row], cfg) -> str:
     games = cfg["games"]
     order = list(games.keys())
@@ -386,8 +401,8 @@ def render_tables(rows: list[Row], cfg) -> str:
         group = [r for r in rows if r.game == game]
         if not group:
             continue
-        # 最久没更新的排最前 —— 这是「不被新项目淹没」的核心
-        group.sort(key=lambda r: (-(r.days if r.days is not None else 10**6), r.name.lower()))
+        # 排序由 config.yaml 的 table_order 决定（新→旧 或 旧→新）
+        group.sort(key=lambda r: table_sort_key(r, cfg))
         meta = games.get(game) or {}
         title = meta.get("title") or game
         subtitle = meta.get("subtitle")
@@ -455,8 +470,10 @@ def render_readme(cfg, rows: list[Row], data: dict) -> str:
         stamp = "尚未核查"
 
     games = {row.game for row in rows}
+    order = cfg.get("table_order", "newest_first")
     replacements = {
         "DATA_STAMP": stamp,
+        "SORT_NOTE": SORT_NOTES.get(order, SORT_NOTES["newest_first"]),
         "MOD_COUNT": str(len(rows)),
         "GAME_COUNT": str(len(games)),
         "STATS_LINE": render_stats(rows),
@@ -585,6 +602,11 @@ def cmd_check(args) -> int:
     entries = load_mods(cfg)
     if not entries:
         problems.append("mods/ 下没有任何登记")
+
+    if cfg.get("table_order") not in TABLE_ORDERS:
+        problems.append(
+            f"config.yaml: table_order「{cfg.get('table_order')}」只能是 {'/'.join(TABLE_ORDERS)}"
+        )
 
     seen_ids: dict[str, str] = {}
     seen_links: dict[str, str] = {}
