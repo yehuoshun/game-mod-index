@@ -1,0 +1,15 @@
+# 新鲜度阈值（单位：天）。想改「多久算久未更新」，只改这三行。
+freshness:
+  active_within_days: 30 # ≤30 天：活跃
+  watch_within_days: 90 # 31–90 天：低频
+  stale_within_days: 180 # 91–180 天：停滞；>180 天：疑似废弃
+
+# 判定「今天」用的固定时区偏移，避免 UTC 跨日把日期算错一天
+utc_offset_hours: 8
+timezone_label: 北京时间
+
+# 游戏清单：key 必须与 mods/<key>.yaml 同名，顺序就是 README 的分组顺序
+games:
+  sts2:
+    title: 杀戮尖塔 2
+    subtitle: Slay the Spire 2
