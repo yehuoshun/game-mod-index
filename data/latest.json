@@ -1,0 +1,77 @@
+{
+  "schema": 1,
+  "synced_at": "2026-11-15T15:33:48Z",
+  "mods": {
+    "shunmod": {
+      "repo": "yehuoshun/STS2-ShunMod",
+      "html_url": "https://github.com/yehuoshun/STS2-ShunMod",
+      "pushed_at": "2026-11-15T15:10:14Z",
+      "default_branch": "main",
+      "stars": 1,
+      "forks": 0,
+      "open_issues": 0,
+      "archived": false,
+      "language": "C#",
+      "license": null,
+      "error": null,
+      "last_commit_at": "2026-11-12T05:53:30Z",
+      "latest_release": {
+        "tag": "0.113",
+        "published_at": "2026-11-15T15:10:15Z"
+      },
+      "first_seen": "2026-11-15",
+      "status": "active"
+    },
+    "ai-teammate": {
+      "repo": "yehuoshun/STS2-AiTeammate",
+      "html_url": "https://github.com/yehuoshun/STS2-AiTeammate",
+      "pushed_at": "2026-07-18T09:44:01Z",
+      "default_branch": "main",
+      "stars": 0,
+      "forks": 1,
+      "open_issues": 0,
+      "archived": false,
+      "language": "C#",
+      "license": null,
+      "error": null,
+      "last_commit_at": "2026-07-18T09:43:56Z",
+      "latest_release": null,
+      "first_seen": "2026-11-15",
+      "status": "stale"
+    },
+    "spire-the-rpg": {
+      "repo": "yehuoshun/SpireTheRpg",
+      "html_url": "https://github.com/yehuoshun/SpireTheRpg",
+      "pushed_at": "2026-10-02T11:18:05Z",
+      "default_branch": "main",
+      "stars": 0,
+      "forks": 0,
+      "open_issues": 0,
+      "archived": false,
+      "language": "C#",
+      "license": null,
+      "error": null,
+      "last_commit_at": "2026-10-02T11:18:00Z",
+      "latest_release": null,
+      "first_seen": "2026-11-15",
+      "status": "watch"
+    },
+    "mod-examples": {
+      "repo": "yehuoshun/sts2-mod-examples",
+      "html_url": "https://github.com/yehuoshun/sts2-mod-examples",
+      "pushed_at": "2026-10-13T23:30:34Z",
+      "default_branch": "main",
+      "stars": 0,
+      "forks": 0,
+      "open_issues": 0,
+      "archived": false,
+      "language": "C#",
+      "license": null,
+      "error": null,
+      "last_commit_at": "2026-10-13T23:30:30Z",
+      "latest_release": null,
+      "first_seen": "2026-11-15",
+      "status": "watch"
+    }
+  }
+}

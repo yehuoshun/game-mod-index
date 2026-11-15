@@ -1,0 +1,35 @@
+# 杀戮尖塔 2（Slay the Spire 2）mod 登记表
+# 一条 = 一个 mod。字段说明见 README 的「怎么登记新 mod」。
+# 改完执行：python scripts/modindex.py all
+
+- id: shunmod
+  name: ShunMod
+  repo: yehuoshun/STS2-ShunMod
+  kind: mod
+  lifecycle: active
+  summary: 自研主线 mod：舜角色的卡牌/遗物/事件 + 共享核心框架 ShunMod_Core
+  tags: [自研, 角色]
+
+- id: ai-teammate
+  name: STS2 AI Teammate
+  repo: yehuoshun/STS2-AiTeammate
+  kind: mod
+  lifecycle: active
+  summary: AI 队友 mod：本地伪联机里自动战斗/选牌/用药水/逛商店（fork 上游后适配当前版本）
+  tags: [自研, AI]
+
+- id: spire-the-rpg
+  name: SpireTheRpg
+  repo: yehuoshun/SpireTheRpg
+  kind: mod
+  lifecycle: active
+  summary: 尖塔 RPG 化改造：装备/融合/强化/锻造/卷轴/掉落系统（反编译源码整理，暂无 README）
+  tags: [自研, 系统改造]
+
+- id: mod-examples
+  name: sts2-mod-examples
+  repo: yehuoshun/sts2-mod-examples
+  kind: example
+  lifecycle: active
+  summary: 纯原生 mod 示例仓库：卡牌/能力/遗物/药水/附魔/事件的可编译样例
+  tags: [自研, 示例]
