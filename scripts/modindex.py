@@ -80,6 +80,11 @@ def say(msg: str) -> None:
     print(msg)
 
 
+def read_text(path: Path) -> str:
+    """读文本，容忍 UTF-8 BOM —— Windows 上手工编辑很容易带上 BOM。"""
+    return path.read_text(encoding="utf-8-sig")
+
+
 def esc(value) -> str:
     return str(value).replace("|", "\\|").replace("\n", " ").strip()
 
@@ -130,7 +135,7 @@ def fmt_release(meta) -> str:
 
 
 def load_config() -> dict:
-    raw = yaml.safe_load(CONFIG_FILE.read_text(encoding="utf-8")) or {}
+    raw = yaml.safe_load(read_text(CONFIG_FILE)) or {}
     fresh = raw.get("freshness") or {}
     cfg = {
         "freshness": {
@@ -153,7 +158,7 @@ def load_mods(cfg) -> list[dict]:
     entries: list[dict] = []
     for path in sorted(MODS_DIR.glob("*.yaml")):
         game = path.stem
-        data = yaml.safe_load(path.read_text(encoding="utf-8")) or []
+        data = yaml.safe_load(read_text(path)) or []
         if not isinstance(data, list):
             raise SystemExit(f"{path.relative_to(ROOT)}: 顶层必须是列表（一条一个 mod）")
         for index, raw in enumerate(data, 1):
@@ -171,7 +176,7 @@ def load_data() -> dict:
     if not DATA_FILE.exists():
         return {"schema": SCHEMA_VERSION, "synced_at": None, "mods": {}}
     try:
-        return json.loads(DATA_FILE.read_text(encoding="utf-8"))
+        return json.loads(read_text(DATA_FILE))
     except json.JSONDecodeError as exc:
         raise SystemExit(f"data/latest.json 解析失败：{exc}") from exc
 
@@ -460,7 +465,7 @@ def render_readme(cfg, rows: list[Row], data: dict) -> str:
         "THRESHOLDS": render_thresholds(cfg),
     }
 
-    text = TEMPLATE_FILE.read_text(encoding="utf-8")
+    text = read_text(TEMPLATE_FILE)
     for key, value in replacements.items():
         text = text.replace("{{" + key + "}}", value)
     return text
@@ -547,7 +552,7 @@ def cmd_render(args) -> int:
     text = render_readme(cfg, rows, data)
 
     if args.check:
-        current = README_FILE.read_text(encoding="utf-8") if README_FILE.exists() else ""
+        current = read_text(README_FILE) if README_FILE.exists() else ""
         if current != text:
             say("README.md 与数据不一致，请执行：python scripts/modindex.py render")
             return 1
@@ -676,7 +681,7 @@ def cmd_add(args) -> int:
         lines.append(f"  last_checked: {args.last_checked or today}")
     block = "\n".join(lines) + "\n"
 
-    text = path.read_text(encoding="utf-8")
+    text = read_text(path)
     if not text.endswith("\n"):
         text += "\n"
     path.write_text(text + block, encoding="utf-8", newline="\n")

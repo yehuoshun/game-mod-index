@@ -96,6 +96,23 @@ class RenderTests(unittest.TestCase):
         self.assertEqual(first, second)
 
 
+class BomTests(unittest.TestCase):
+    """Windows 上手滑保存成「UTF-8 带 BOM」不该让每日核查整天挂掉。"""
+
+    def setUp(self):
+        self.tmp = modindex.ROOT / "tmp"
+        self.tmp.mkdir(exist_ok=True)
+        self.file = self.tmp / "bom-probe.json"
+
+    def tearDown(self):
+        self.file.unlink(missing_ok=True)
+
+    def test_read_text_strips_bom(self):
+        self.file.write_bytes(b"\xef\xbb\xbf" + b'{"a": 1}')
+        self.assertEqual(modindex.read_text(self.file), '{"a": 1}')
+        self.assertEqual(__import__("json").loads(modindex.read_text(self.file)), {"a": 1})
+
+
 class ConfigTests(unittest.TestCase):
     def test_thresholds_are_90_180(self):
         cfg = modindex.load_config()
