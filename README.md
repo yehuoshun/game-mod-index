@@ -5,7 +5,7 @@
 
 | 数据基准 | 收录 | 状态分布 |
 | --- | --- | --- |
-| 2026-11-15 23:33（北京时间） | 4 个 mod · 1 个游戏 | ✅ 活跃 1 · 🟡 低频 2 · ⏳ 停滞 1 |
+| 2026-11-16 00:01（北京时间） | 5 个 mod · 2 个游戏 | ✅ 活跃 3 · 🟡 低频 1 · ⏳ 停滞 1 |
 
 主表格按「最后更新」从新到旧排列；久未更新的不在这张表里比早晚，看上面「需要关注」区块。
 
@@ -15,7 +15,7 @@
 
 | 状态 | Mod | 最后更新 | 未更新 | 该做什么 |
 | --- | --- | --- | --- | --- |
-| ⏳ 停滞 | [STS2 AI Teammate](https://github.com/yehuoshun/STS2-AiTeammate) | 2026-07-18 | 120 天 | 看一眼上游 API/依赖有没有变；还能跑就先放着，或把 config 阈值调宽 |
+| ⏳ 停滞 | [STS2 AI Teammate](https://github.com/yehuoshun/STS2-AiTeammate) | 2026-07-18 | 121 天 | 看一眼上游 API/依赖有没有变；还能跑就先放着，或把 config 阈值调宽 |
 
 ## 📚 全部 Mod
 
@@ -23,10 +23,16 @@
 
 | Mod | 类型 | 上游 | 最后更新 | 未更新 | 状态 | 最新版 | 说明 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| [ShunMod](https://github.com/yehuoshun/STS2-ShunMod) | mod | yehuoshun/STS2-ShunMod | 2026-11-12 | 今天 | ✅ 活跃 | 0.113 | 自研主线 mod：舜角色的卡牌/遗物/事件 + 共享核心框架 ShunMod_Core |
-| [sts2-mod-examples](https://github.com/yehuoshun/sts2-mod-examples) | 示例 | yehuoshun/sts2-mod-examples | 2026-10-14 | 32 天 | 🟡 低频 | — | 纯原生 mod 示例仓库：卡牌/能力/遗物/药水/附魔/事件的可编译样例 |
-| [SpireTheRpg](https://github.com/yehuoshun/SpireTheRpg) | mod | yehuoshun/SpireTheRpg | 2026-10-02 | 44 天 | 🟡 低频 | — | 尖塔 RPG 化改造：装备/融合/强化/锻造/卷轴/掉落系统（反编译源码整理，暂无 README） |
-| [STS2 AI Teammate](https://github.com/yehuoshun/STS2-AiTeammate) | mod | yehuoshun/STS2-AiTeammate | 2026-07-18 | 120 天 | ⏳ 停滞 | — | AI 队友 mod：本地伪联机里自动战斗/选牌/用药水/逛商店（fork 上游后适配当前版本） |
+| [ShunMod](https://github.com/yehuoshun/STS2-ShunMod) | mod | yehuoshun/STS2-ShunMod | 2026-11-12 | 1 天 | ✅ 活跃 | 0.113 | 自研主线 mod：舜角色的卡牌/遗物/事件 + 共享核心框架 ShunMod_Core |
+| [sts2-mod-examples](https://github.com/yehuoshun/sts2-mod-examples) | 示例 | yehuoshun/sts2-mod-examples | 2026-11-15 | 1 天 | ✅ 活跃 | — | 纯原生 mod 示例仓库：卡牌/能力/遗物/药水/附魔/事件的可编译样例 |
+| [SpireTheRpg](https://github.com/yehuoshun/SpireTheRpg) | mod | yehuoshun/SpireTheRpg | 2026-10-02 | 45 天 | 🟡 低频 | — | 尖塔 RPG 化改造：装备/融合/强化/锻造/卷轴/掉落系统（反编译源码整理，暂无 README） |
+| [STS2 AI Teammate](https://github.com/yehuoshun/STS2-AiTeammate) | mod | yehuoshun/STS2-AiTeammate | 2026-07-18 | 121 天 | ⏳ 停滞 | — | AI 队友 mod：本地伪联机里自动战斗/选牌/用药水/逛商店（fork 上游后适配当前版本） |
+
+### 末世：我有一辆房车 · Rebirth Hoarder  `rebirth-hoarder`
+
+| Mod | 类型 | 上游 | 最后更新 | 未更新 | 状态 | 最新版 | 说明 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| [末世房车 MOD 工具库](https://github.com/yehuoshun/rebirth-hoarder-mod) | mod | yehuoshun/rebirth-hoarder-mod | 2026-11-03 | 13 天 | ✅ 活跃 | v3.23 | F8 修改面板 + 独立存档修改器，中英双语、按语义锚点自动适配游戏小版本（fork 自 thus1235，另加 CI 打包发布） |
 
 ## ➕ 怎么登记新 mod
 

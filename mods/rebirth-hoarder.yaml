@@ -1,0 +1,10 @@
+# 《末世：我有一辆房车》（Rebirth Hoarder）mod 登记表
+# 一条 = 一个 mod。字段说明见 README 的「怎么登记新 mod」。
+
+- id: rebirth-hoarder-mod
+  name: 末世房车 MOD 工具库
+  repo: yehuoshun/rebirth-hoarder-mod
+  kind: mod
+  lifecycle: active
+  summary: F8 修改面板 + 独立存档修改器，中英双语、按语义锚点自动适配游戏小版本（fork 自 thus1235，另加 CI 打包发布）
+  tags: [fork, 修改器, 存档]

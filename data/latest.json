@@ -1,7 +1,27 @@
 {
   "schema": 1,
-  "synced_at": "2026-11-15T15:33:48Z",
+  "synced_at": "2026-11-15T16:01:35Z",
   "mods": {
+    "rebirth-hoarder-mod": {
+      "repo": "yehuoshun/rebirth-hoarder-mod",
+      "html_url": "https://github.com/yehuoshun/rebirth-hoarder-mod",
+      "pushed_at": "2026-11-02T19:29:05Z",
+      "default_branch": "main",
+      "stars": 0,
+      "forks": 0,
+      "open_issues": 0,
+      "archived": false,
+      "language": "C#",
+      "license": null,
+      "error": null,
+      "last_commit_at": "2026-11-02T19:29:00Z",
+      "latest_release": {
+        "tag": "v3.23",
+        "published_at": "2026-11-02T19:22:37Z"
+      },
+      "first_seen": "2026-11-16",
+      "status": "active"
+    },
     "shunmod": {
       "repo": "yehuoshun/STS2-ShunMod",
       "html_url": "https://github.com/yehuoshun/STS2-ShunMod",
@@ -59,7 +79,7 @@
     "mod-examples": {
       "repo": "yehuoshun/sts2-mod-examples",
       "html_url": "https://github.com/yehuoshun/sts2-mod-examples",
-      "pushed_at": "2026-10-13T23:30:34Z",
+      "pushed_at": "2026-11-15T15:58:04Z",
       "default_branch": "main",
       "stars": 0,
       "forks": 0,
@@ -68,10 +88,10 @@
       "language": "C#",
       "license": null,
       "error": null,
-      "last_commit_at": "2026-10-13T23:30:30Z",
+      "last_commit_at": "2026-11-15T15:58:00Z",
       "latest_release": null,
       "first_seen": "2026-11-15",
-      "status": "watch"
+      "status": "active"
     }
   }
 }
