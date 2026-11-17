@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "synced_at": "2026-11-15T16:01:35Z",
+  "synced_at": "2026-11-17T03:49:15Z",
   "mods": {
     "rebirth-hoarder-mod": {
       "repo": "yehuoshun/rebirth-hoarder-mod",
@@ -79,7 +79,7 @@
     "mod-examples": {
       "repo": "yehuoshun/sts2-mod-examples",
       "html_url": "https://github.com/yehuoshun/sts2-mod-examples",
-      "pushed_at": "2026-11-15T15:58:04Z",
+      "pushed_at": "2026-11-16T17:20:22Z",
       "default_branch": "main",
       "stars": 0,
       "forks": 0,
@@ -88,7 +88,7 @@
       "language": "C#",
       "license": null,
       "error": null,
-      "last_commit_at": "2026-11-15T15:58:00Z",
+      "last_commit_at": "2026-11-16T17:20:17Z",
       "latest_release": null,
       "first_seen": "2026-11-15",
       "status": "active"
