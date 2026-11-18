@@ -8,7 +8,7 @@ freshness:
 utc_offset_hours: 8
 timezone_label: 北京时间
 
-# 主表格排序（顶上的「需要关注」区块永远按最久没动排，不受这里影响）
+# 主表格排序（表下的「需要关注」区块永远按最久没动排，不受这里影响）
 #   newest_first  新 → 旧（默认，像普通项目列表）
 #   oldest_first  旧 → 新（久未更新的顶到最前）
 table_order: newest_first

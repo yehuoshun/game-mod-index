@@ -88,6 +88,12 @@ class RenderTests(unittest.TestCase):
         # 北京时区 2026-11-15 23:00，验证 synced_at 的时区换算
         self.assertIn("2026-11-15 23:00", text)
 
+    def test_attention_block_below_tables(self):
+        # 「需要关注」是告警块，必须排在「全部 Mod」之后，整页读序才是 活跃→停更
+        data = {"synced_at": "2026-11-15T15:00:00Z", "mods": {}}
+        text = modindex.render_readme(self.cfg, [self._row("A", 100)], data)
+        self.assertLess(text.index("## 📚 全部 Mod"), text.index("## 🔔 需要关注"))
+
     def test_render_is_deterministic(self):
         data = {"synced_at": "2026-11-15T15:00:00Z", "mods": {}}
         rows = [self._row("A", 100), self._row("B", 5, "active", False)]

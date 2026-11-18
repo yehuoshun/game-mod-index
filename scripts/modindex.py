@@ -47,7 +47,7 @@ KIND_LABELS = {
 LIFECYCLES = ("active", "paused", "archived")
 TABLE_ORDERS = ("newest_first", "oldest_first")
 SORT_NOTES = {
-    "newest_first": "主表格按「最后更新」从新到旧排列；久未更新的不在这张表里比早晚，看上面「需要关注」区块。",
+    "newest_first": "主表格按「最后更新」从新到旧排列；久未更新的不在这张表里比早晚，看下面「需要关注」区块。",
     "oldest_first": "主表格按「多久没更新」从久到近排列，最久没动的永远排在最前面。",
 }
 
