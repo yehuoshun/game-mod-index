@@ -1,13 +1,13 @@
 {
   "schema": 1,
-  "synced_at": "2026-11-17T03:49:15Z",
+  "synced_at": "2026-11-18T02:52:41Z",
   "mods": {
     "rebirth-hoarder-mod": {
       "repo": "yehuoshun/rebirth-hoarder-mod",
       "html_url": "https://github.com/yehuoshun/rebirth-hoarder-mod",
       "pushed_at": "2026-11-02T19:29:05Z",
       "default_branch": "main",
-      "stars": 0,
+      "stars": 1,
       "forks": 0,
       "open_issues": 0,
       "archived": false,
